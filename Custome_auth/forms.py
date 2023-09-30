@@ -20,7 +20,12 @@ class NewUserForm(UserCreationForm):
 			user.save()
 		return user
 	
-# class ContactForm(forms.Form):
-# 	class Meta:
-# 		model = User
-# 		fields = ("username", "email", "password1", "password2")
+class ContactForm(forms.Form):
+	new_password1 = forms.CharField(
+        widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}),
+        strip=False)
+	new_password2 = forms.CharField(
+        strip=False,
+        widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}),
+    )
+	

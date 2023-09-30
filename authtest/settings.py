@@ -29,7 +29,7 @@ ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 # SECRET_KEY = 'django-insecure-_6s%@!tcp(&&3g2#z5ngvzt267q7pf1orc00^$0(qk31f!yg02'
 
 # # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = False
+# DEBUG = True
 
 # ALLOWED_HOSTS = ['*']
 
@@ -125,7 +125,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-SESSION_COOKIE_AGE = 72000  # 1 hour in seconds
+SESSION_COOKIE_AGE = 1800  # 1/2 hour in seconds
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
@@ -142,3 +142,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'welcome'
 LOGOUT_REDIRECT_URL = 'Goodbye'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'makariousgadelkarim@gmail.com'
+# EMAIL_HOST_PASSWORD = os.environ.get("User_Mail_Password")
+EMAIL_HOST_PASSWORD = 'izroeffbwrtkntfb'
